@@ -21,8 +21,8 @@ export default function Cabecalho({children}:Props) {
                 </div>
                 <Image
                     src={logoepdjmm}
-                    width={56}
-                    height={56}
+                    width={72}
+                    height={72}
                     alt='logo do site'
                 />
             </div>

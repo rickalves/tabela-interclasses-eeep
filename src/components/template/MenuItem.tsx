@@ -12,8 +12,8 @@ export default function MenuItem(props: MenuItemProps) {
     function renderizarBotao() {
         return (
             <div className={`
-                    flex justify-center items-center cursor-pointer text-xs w-24
-                    h-6 text-white  border-white hover:bg-green-700 transition ease-in-out
+                    flex justify-center items-center cursor-pointer text-sm w-24
+                    h-6 text-white  border-white md:hover:bg-green-700 transition ease-in-out
                     ${props.className ?? ''}
                     ${props.selecionado? 'border-b-2' : ''}
                 `}
