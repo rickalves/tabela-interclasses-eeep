@@ -4,15 +4,15 @@ import Cabecalho from '@/components/template/Cabecalho'
 import Menu from '@/components/template/Menu'
 import MenuItem from '@/components/template/MenuItem'
 
-export default function Home() {
+export default function Estatisticas() {
   return (
     <Pagina>
       <Cabecalho>
         <Menu>
-          <MenuItem url="/" selecionado>
+          <MenuItem url="/">
             Classificação
           </MenuItem>
-          <MenuItem url="/estatisticas">
+          <MenuItem url="/estatisticas" selecionado>
             Estatísticas
           </MenuItem>
           <MenuItem url="/partidas">
@@ -20,7 +20,6 @@ export default function Home() {
           </MenuItem>
         </Menu>
       </Cabecalho>
-      <Tabela />
     </Pagina>
   )
 }
