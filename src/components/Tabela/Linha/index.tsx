@@ -16,7 +16,7 @@ export default function Linha({numero, cabecalho, logoTime, nomeTime }: LinhaPro
                 <div className="flex gap-2 items-center">
                     <div>Time</div>
                 </div>
-                <div className="flex justify-center items-center w-7/12">
+                <div className="flex justify-between items-center w-7/12">
                     <div className="text-black flex justify-center w-6">P</div>
                     <div className="flex justify-center w-6">PN</div>
                     <div className="flex justify-center w-6">J</div>

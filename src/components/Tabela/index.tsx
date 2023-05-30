@@ -7,10 +7,10 @@ import logoagro from "../../../public/agro-logo.svg"
 export default function Tabela(){
     return(
         <div className={`
-            flex flex-co text-neutral-400 w-full px-1 py-2
+            flex flex-co text-neutral-400 w-full px-1 py-2 md:px-96
 
         `}>
-            <div className={`flex flex-col gap-2 bg-white shadow-md w-full rounded-md p-2`}>
+            <div className={`flex flex-col gap-2 bg-white shadow-md w-full rounded-md p-2 md:p-6`}>
                 <Linha 
                     cabecalho
                 />

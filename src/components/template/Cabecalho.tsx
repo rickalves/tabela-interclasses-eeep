@@ -7,8 +7,10 @@ interface Props{
 }
 export default function Cabecalho({children}:Props) {
     return (
-        <header className={`flex flex-col justify-between items-center pt-2 pb-0 px-4
-                         bg-green-600 w-screen h-28`}>
+        <header className={
+            `flex flex-col justify-between items-center pt-2 pb-0 px-4
+           bg-green-600 w-screen h-28 md:px-96`
+        }>
             <div className='w-full flex justify-between items-center'>
                 <div className='flex items-center gap-2'>
                     <Image
