@@ -10,7 +10,12 @@ Site para acompanhamento dos resultados dos jogos de futsal entre as turmas de u
 
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-<!-- ![](https://github.com/rickalves/orgs-app/blob/main/src/assets/logo.png?text=imagem+lindona+do+meu+projeto#vitrinedev) -->
+<img 
+     src="https://github.com/rickalves/tabela-interclasses-eeep/blob/main/public/frame-projeto.jpg"
+     alt="imagem projeto"
+     width="400"
+     height="400"
+/>
 
 ## Detalhes do projeto
 
