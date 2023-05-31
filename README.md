@@ -1,38 +1,45 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tabela Interclasses EEEP
 
-## Getting Started
+Site para acompanhamento dos resultados dos jogos de futsal entre as turmas de uma escola profissional.
 
-First, run the development server:
+| Detalhes do Projeto |     |
+| -------------  | --- |
+| :sparkles: Nome        | **Interclasses APP**
+| :label: Tecnologias | React, Nextjs, Mongo
+| :rocket: URL         |
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- Inserir imagem com a #vitrinedev ao final do link -->
+<!-- ![](https://github.com/rickalves/orgs-app/blob/main/src/assets/logo.png?text=imagem+lindona+do+meu+projeto#vitrinedev) -->
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Detalhes do projeto
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+![](https://img.shields.io/badge/status-Em_desenvolvimento-brightgreen)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/rickalves/tabela-interclasses-eeep/main?color=gree)
+![GitHub repo size](https://img.shields.io/github/repo-size/rickalves/tabela-interclasses-eeep?color=sucess)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Tecnologias
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![](https://img.shields.io/badge/React-0075A2?style=for-the-badge&logo=react&logoColor=white)
+![](https://img.shields.io/badge/Nextjs-1C5253?style=for-the-badge&logo=next.js&logoColor=white)
+![](https://img.shields.io/badge/Mongo-43853D?style=for-the-badge&logo=mongodb&logoColor=white)
 
-## Learn More
+#
 
-To learn more about Next.js, take a look at the following resources:
+## Como testar esse projeto?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Primeiro passo**: instalar as dependências
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ~~~sh
+     npm install
+    ~~~
 
-## Deploy on Vercel
+2. **Segundo passo**: Iniciar servidor local
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ~~~sh
+    npm run dev
+    ~~~
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **Terceiro passo**: Acessar aplicação
+
+    [https://localhost:3000](https://localhost:3000)
