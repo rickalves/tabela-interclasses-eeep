@@ -1,62 +1,52 @@
 import LogoTime from "@/components/LogoTime"
-
 interface LinhaProps {
-    cabecalho?: boolean
-    numero?: number
-    logoTime?: string
-    nomeTime?: string
+    posicao: number;
+    time: {
+        nome: string;
+        p: number;
+        pn: number;
+        j: number;
+        v: number;
+        e: number;
+        d: number;
+        gp: number;
+        gc: number;
+        gs: number;
+    }
 }
 
-export default function Linha({numero, cabecalho, logoTime, nomeTime }: LinhaProps) {
-     return cabecalho ? (
+export default function Linha({ posicao, time }: LinhaProps) {
+    const logoTime = `/${time.nome.split(" ")[0].toLowerCase()}-logo.svg`
+    return (
+        <div className=" flex flex-col justify-center h-12">
         <div className={`
-            flex flex-col justify-between items-center text-xs font-bold gap-2
+            flex flex-col justify-between text-xs md:text-base font-bold gap-2
         `}>
-            <div className="flex w-full justify-between">
-                <div className="flex gap-2 items-center">
-                    <div>Time</div>
+                <div className="flex w-full justify-between items-center">
+                    <div className="flex gap-2 items-center">
+                        <div className="flex justify-center w-4">{`${posicao}º`}</div>
+                        <LogoTime
+                            src={logoTime}
+                            height={32}
+                            width={32}
+                        />
+                        <div>{time.nome}</div>
+                    </div>
+                    <div className="flex justify-between items-center w-7/12">
+                        <div className="text-black flex justify-center w-6">{time.p}</div>
+                        <div className="flex justify-center w-6">{time.pn}</div>
+                        <div className="flex justify-center w-6">{time.j}</div>
+                        <div className="flex justify-center w-6">{time.v}</div>
+                        <div className="flex justify-center w-6">{time.e}</div>
+                        <div className="flex justify-center w-6">{time.d}</div>
+                        <div className="flex justify-center w-6">{time.gp}</div>
+                        <div className="flex justify-center w-6">{time.gc}</div>
+                        <div className="flex justify-center w-6">{time.gs}</div>
+                    </div>
                 </div>
-                <div className="flex justify-between items-center w-7/12">
-                    <div className="text-black flex justify-center w-6">P</div>
-                    <div className="flex justify-center w-6">PN</div>
-                    <div className="flex justify-center w-6">J</div>
-                    <div className="flex justify-center w-6">V</div>
-                    <div className="flex justify-center w-6">E</div>
-                    <div className="flex justify-center w-6">D</div>
-                    <div className="flex justify-center w-6">GP</div>
-                    <div className="flex justify-center w-6">GC</div>
-                    <div className="flex justify-center w-6">GS</div>
-                </div>
+                <hr className="border-1 border-gray-300 w-full" />
             </div>
-            <hr className="border-1 border-gray-300 w-full"/> 
         </div>
-    ) : (
-        <div className={`
-            flex flex-col justify-between items-center text-xs font-bold gap-2
-        `}>
-            <div className="flex w-full justify-between">
-                <div className="flex gap-1 items-center">
-                    <div className="flex justify-center w-4">{`${numero}º`}</div>
-                    <LogoTime
-                        src={logoTime}
-                        height={32}
-                        width={32}
-                    />
-                    <div>{nomeTime}</div>
-                </div>
-                <div className="flex justify-between items-center w-7/12">
-                    <div className="text-black flex justify-center w-6">00</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                    <div className="flex justify-center w-6">0</div>
-                </div>
-            </div>
-            <hr className="border-1 border-gray-300 w-full"/> 
-        </div>
+
     )
 }

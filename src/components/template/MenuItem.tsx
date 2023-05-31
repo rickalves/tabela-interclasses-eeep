@@ -9,22 +9,16 @@ interface MenuItemProps {
 }
 
 export default function MenuItem(props: MenuItemProps) {
-    function renderizarBotao() {
         return (
             <div className={`
-                    flex justify-center items-center cursor-pointer text-sm w-24
-                    h-6 text-white  border-white md:hover:bg-green-700 transition ease-in-out
+                    flex justify-center items-center cursor-pointer text-sm md:text-base w-24 md:w-32
+                    h-8 text-white  border-white md:hover:bg-green-700 transition ease-in-out
                     ${props.className ?? ''}
                     ${props.selecionado? 'border-b-2' : ''}
                 `}
                 onClick={props.onClick}
             >
-                {props.children}
+                <Link href={props.url ?? ''}>{props.children}</Link>
             </div>
         )
-    }
-
-    return props.url ? (
-        <Link href={props.url ?? ''}>{renderizarBotao()}</Link>
-    ) : renderizarBotao()
 }
