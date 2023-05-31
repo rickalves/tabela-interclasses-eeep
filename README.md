@@ -17,6 +17,9 @@ Site para acompanhamento dos resultados dos jogos de futsal entre as turmas de u
      height="400"
 />
 
+## Wireframes do projeto
+[Telas Figma](https://www.figma.com/file/u0gqiZxNJT0avuOmhzvyQd/jogos-interclass-app?type=design&node-id=18-672&t=9eeu08G1yVgfJvkG-0)
+
 ## Detalhes do projeto
 
 ![](https://img.shields.io/badge/status-Em_desenvolvimento-brightgreen)
