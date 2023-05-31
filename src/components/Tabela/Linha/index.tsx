@@ -20,10 +20,10 @@ export default function Linha({ posicao, time }: LinhaProps) {
     return (
         <div className=" flex flex-col justify-center h-12">
         <div className={`
-            flex flex-col justify-between text-xs md:text-base font-bold gap-2
+            flex flex-col justify-between text-xs md:text-base gap-2
         `}>
                 <div className="flex w-full justify-between items-center">
-                    <div className="flex gap-2 items-center">
+                    <div className="flex gap-2 items-center text-black">
                         <div className="flex justify-center w-4">{`${posicao}º`}</div>
                         <LogoTime
                             src={logoTime}
@@ -33,7 +33,7 @@ export default function Linha({ posicao, time }: LinhaProps) {
                         <div>{time.nome}</div>
                     </div>
                     <div className="flex justify-between items-center w-7/12">
-                        <div className="text-black flex justify-center w-6">{time.p}</div>
+                        <div className="text-black flex justify-center w-6 font-bold">{time.p}</div>
                         <div className="flex justify-center w-6">{time.pn}</div>
                         <div className="flex justify-center w-6">{time.j}</div>
                         <div className="flex justify-center w-6">{time.v}</div>

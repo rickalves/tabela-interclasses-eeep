@@ -7,8 +7,8 @@ interface PaginaProps {
 export default function Pagina(props: PaginaProps) {
     return (
         <div className={`
-                flex flex-col h-screen items-center
-                bg-gray-100 overflow-x-hidden relative
+                flex flex-col h-screen items-center gap-2 md:px-96 pb-10
+                bg-gray-100 overflow-x-hidden relative px-2
                 ${props.className ?? ''}
         `}>
             {props.children}
