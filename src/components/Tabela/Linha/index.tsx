@@ -16,7 +16,6 @@ interface LinhaProps {
 }
 
 export default function Linha({ posicao, time }: LinhaProps) {
-    const logoTime = `/${time.nome.split(" ")[0].toLowerCase()}-logo.svg`
     return (
         <div className=" flex flex-col justify-center h-12">
         <div className={`
@@ -26,7 +25,7 @@ export default function Linha({ posicao, time }: LinhaProps) {
                     <div className="flex gap-2 items-center text-black">
                         <div className="flex justify-center w-4">{`${posicao}º`}</div>
                         <LogoTime
-                            src={logoTime}
+                            time={time.nome}
                             height={32}
                             width={32}
                         />

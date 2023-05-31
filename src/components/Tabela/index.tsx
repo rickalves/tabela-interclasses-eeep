@@ -7,14 +7,14 @@ export default function Tabela() {
 
     return (
         <div className={`
-            flex flex-co text-neutral-400 w-full px-1 py-2
+            flex flex-co text-neutral-500 w-full px-1 py-2
         `}>
             <div className={`flex flex-col gap-2 bg-white shadow-md w-full rounded-md p-2 md:p-6`}>
                 <div className={`
                     flex flex-col justify-between items-center text-xs md:text-base font-bold gap-2
                 `}>
                     <div className="flex w-full justify-between">
-                        <div className="flex gap-2 items-center">
+                        <div className="flex gap-2 items-center text-sm">
                             <div>Time</div>
                         </div>
                         <div className="flex justify-between items-center w-7/12">
