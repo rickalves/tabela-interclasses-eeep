@@ -15,7 +15,7 @@ export default function Tabela() {
                 `}>
                     <div className="flex w-full justify-between">
                         <div className="flex gap-2 items-center text-sm">
-                            <div>Time</div>
+                            <div>TIME</div>
                         </div>
                         <div className="flex justify-between items-center w-7/12">
                             <div className="text-black flex justify-center w-6">P</div>
@@ -42,7 +42,7 @@ export default function Tabela() {
                         )
                     }
                </div>
-                <div className="flex flex-col bg-gray-100 text-black text-xs p-4 rounded-md gap-4">
+                <div className="flex flex-col bg-gray-100 text-black text-xs md:text-base p-4 rounded-md gap-4">
                     <div className="flex flex-col gap-2">
                         <h1 className="font-bold">Legenda</h1>
                         <div className="flex gap-4">

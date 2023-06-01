@@ -5,6 +5,7 @@ import MenuItem from '@/components/template/MenuItem'
 import CardRodada from '@/components/CardRodada'
 import Partida from '@/components/Partida'
 import partidas from "../data/mocks/partidas"
+import Rodape from '@/components/template/Rodape'
 
 export default function Partidas() {
   return (
@@ -42,6 +43,7 @@ export default function Partidas() {
           </CardRodada>
         )
       }
+      <Rodape />
     </Pagina>
   )
 }

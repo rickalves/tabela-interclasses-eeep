@@ -9,6 +9,7 @@ import {
   carregaCartoesAmarelos, 
   carregaCartoesVermelhos 
 } from "../services/carregaDados"
+import Rodape from '@/components/template/Rodape'
 
 export default function Estatisticas() {
   const gols = carregaGols();
@@ -59,6 +60,7 @@ export default function Estatisticas() {
                 foto={jogador.foto || 'foto-icon.svg'}
               />)}
       </Card>
+      <Rodape />
     </Pagina>
   )
 }

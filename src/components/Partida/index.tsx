@@ -14,7 +14,10 @@ interface Props{
 
 export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor }:Props){
     return(
-        <div className="flex flex-col w-full bg-white p-4 rounded-md shadow-md gap-2 mt-4">
+        <div className={`
+            flex w-full bg-white p-4 rounded-md shadow-md mt-4
+            justify-center overflow-hidden
+        `}>
             <div className="flex justify-between text-sm  text-gray-500">
                 <div className="flex flex-col gap-4">
                     <Placar time={timeA} placar={placarA} vencedor={vencedor === 'A'}/>
