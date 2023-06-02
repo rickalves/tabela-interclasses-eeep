@@ -1,4 +1,5 @@
 const estatisticas = {
+    temporada:2023,
     gols:[
         {
             id:1,

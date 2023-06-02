@@ -1,4 +1,5 @@
 const tabela = {
+    temporada:2023,
     times:[
         {
             id:1,
