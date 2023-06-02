@@ -27,7 +27,7 @@ export default function Partidas() {
         partidas.rodadas.map((rodada, index) =>
           <CardRodada rodada={index+1} totalRodadas={rodada.length}>
             {
-                rodada.map(partida => 
+                rodada.map((partida, index) => 
                   <Partida
                     timeA={partida.timeA}
                     timeB={partida.timeB}
@@ -37,6 +37,7 @@ export default function Partidas() {
                     data={partida.data}
                     hora={partida.hora}
                     vencedor={partida.vencedor}
+                    colspan={index == rodada.length-1 && rodada.length == 5? true : false}
                   />
                 )
             }
