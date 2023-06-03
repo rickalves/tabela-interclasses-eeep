@@ -3,25 +3,17 @@ import partidasMock from "../mocks/partidas.js";
 
 class PartidaController{
 
-    static buscarPartidas = () => {
-        partidas.find((err, Autors) => {
-            res.status(200).json(Autors);
-        });
+   static buscarPartidas = async () => {
+        return await partidas.find().then(partidas => partidas);
     }
 
-    static buscarAutorPorId = (req, res) => {
-        const {id} = req.params
-        partidas.findById(id, (err, autor) => {
-            if(!err){
-                res.status(200).json(autor);
-            }else{
-                res.status(400).send({message: `${err.message} - Erro ao buscar.`})
-            }
-        });
+    static buscarPartidasAno = async (ano) => {
+        const query = partidas.find({ temporada:ano })
+        return await query.exec()
     }
 
     static cadastrarPartidas = () => {
-        let novaPartidas = new partidas({
+        let novaPartida = new partidas({
             temporada:2023,
             rodadas:[
                 [
@@ -39,7 +31,7 @@ class PartidaController{
             ]
         });
 
-        novaPlartidas.save()
+        novaPartida.save()
     }
 }
 
