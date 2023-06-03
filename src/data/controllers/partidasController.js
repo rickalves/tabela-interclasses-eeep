@@ -38,8 +38,8 @@ class PartidaController{
                 ]
             ]
         });
-        
-        novaPartidas.save()
+
+        novaPlartidas.save()
     }
 }
 

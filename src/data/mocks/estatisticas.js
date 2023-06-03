@@ -29,6 +29,13 @@ const estatisticas = {
             gols: 7,
             foto: "",
         },
+        {
+            id:5,
+            nome: "Caique",
+            time: "INFOR 1º",
+            gols: 1000,
+            foto: "",
+        },
     ],
     cartoes_amarelos:[
         {

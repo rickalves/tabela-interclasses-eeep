@@ -55,7 +55,7 @@ const tabela = {
             id:6,
             time: "INFOR 1º",
             pn: 0,
-            v: 5,
+            v: 30,
             e: 2,
             d: 1,
             gp: 15,
