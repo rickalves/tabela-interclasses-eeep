@@ -25,10 +25,11 @@ export default function Partidas() {
       </Cabecalho>
       {
         partidas.rodadas.map((rodada, index) =>
-          <CardRodada rodada={index+1} totalRodadas={rodada.length}>
+          <CardRodada rodada={index+1} totalRodadas={rodada.length} key={index}>
             {
                 rodada.map((partida, index) => 
                   <Partida
+                    key={index}
                     timeA={partida.timeA}
                     timeB={partida.timeB}
                     placarA={partida.placarA}

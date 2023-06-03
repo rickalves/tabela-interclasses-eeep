@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     },
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/data/app.mjs", "src/data/config/dbConnect.mjs", "src/data/model/Estatisticas.mjs", "src/data/model/Partidas.mjs"],
   "exclude": ["node_modules"],
 }

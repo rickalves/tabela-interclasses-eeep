@@ -33,6 +33,7 @@ export default function Estatisticas() {
       <Card titulo='Gols'>
           {gols.map((jogador, index) => 
               <Jogador 
+                key={index}
                 nome={jogador.nome}
                 time={jogador.time}
                 posicao={index + 1}
@@ -43,6 +44,7 @@ export default function Estatisticas() {
       <Card titulo='Cartões Amarelos'>
           {cartoesAmarelos.map((jogador, index) => 
               <Jogador 
+                key={index}
                 nome={jogador.nome}
                 time={jogador.time}
                 posicao={index + 1}
@@ -53,6 +55,7 @@ export default function Estatisticas() {
       <Card titulo='Cartões Vermelhos'>
           {cartoesVermelhos.map((jogador, index) => 
               <Jogador 
+                key={index}
                 nome={jogador.nome}
                 time={jogador.time}
                 posicao={index + 1}
