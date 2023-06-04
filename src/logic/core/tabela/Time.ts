@@ -8,5 +8,5 @@ export default interface Time{
     d: number;
     gp: number;
     gc: number;
-    gs: number;
+    sg: number;
 }

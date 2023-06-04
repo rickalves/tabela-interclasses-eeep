@@ -11,7 +11,7 @@ interface LinhaProps {
         d: number;
         gp: number;
         gc: number;
-        gs: number;
+        sg: number;
     }
 }
 
@@ -40,7 +40,7 @@ export default function Linha({ posicao, time }: LinhaProps) {
                         <div className="flex justify-center w-6">{time.d}</div>
                         <div className="flex justify-center w-6">{time.gp}</div>
                         <div className="flex justify-center w-6">{time.gc}</div>
-                        <div className="flex justify-center w-6">{time.gs}</div>
+                        <div className="flex justify-center w-6">{time.sg}</div>
                     </div>
                 </div>
                 <hr className="border-1 border-gray-300 w-full" />

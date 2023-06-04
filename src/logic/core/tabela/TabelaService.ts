@@ -1,4 +1,5 @@
 import TabelaController from "../../mongodb/controllers/tabelaController";
+import Time from "./Time";
 export default class TabelaService {
     
   static async carregaTabelaAno(ano:number) {
@@ -14,31 +15,30 @@ export default class TabelaService {
           d: time.d,
           gp: time.gp,
           gc: time.gc,
-          gs: (time.gp - time.gc)
+          sg: (time.gp - time.gc)
         }
       })
+
+      const tabelaOrdenada = tabelaCompleta.sort((a:Time, b:Time):any =>{
+        if (a.p < b.p) {
+          return 1;
+        }
+        if (a.p > b.p) {
+          return -1;
+        }
   
+        if (a.p == b.p) {
+          if (a.sg < b.sg) {
+            return 1;
+          }
+          if (a.sg > b.sg) {
+            return -1;
+          }
+          return 0;
+        }
   
-      // const tabelaOrdenada = tabelaCompleta.sort(function(a, b){
-      //   if (a.p < b.p) {
-      //     return 1;
-      //   }
-      //   if (a.p > b.p) {
-      //     return -1;
-      //   }
+      });
   
-      //   if (a.p == b.p) {
-      //     if (a.gs < b.gs) {
-      //       return 1;
-      //     }
-      //     if (a.gs > b.gs) {
-      //       return -1;
-      //     }
-      //     return 0;
-      //   }
-  
-      // });
-  
-      return tabelaCompleta;
+      return tabelaOrdenada;
     }
 }
