@@ -24,7 +24,7 @@ const partidasSchema = new mongoose.Schema(
     }
 )
 
-const partidas = mongoose.models.partidas || mongoose.model("partidas", partidasSchema);
+const partidas = mongoose.models.Partidas || mongoose.model("Partidas", partidasSchema);
 
 
 export default partidas;

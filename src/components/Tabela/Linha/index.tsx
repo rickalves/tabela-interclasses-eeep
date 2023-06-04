@@ -2,7 +2,7 @@ import LogoTime from "@/components/LogoTime"
 interface LinhaProps {
     posicao: number;
     time: {
-        nome: string;
+        time: string;
         p: number;
         pn: number;
         j: number;
@@ -25,11 +25,11 @@ export default function Linha({ posicao, time }: LinhaProps) {
                     <div className="flex gap-2 items-center text-black">
                         <div className="flex justify-center w-4">{`${posicao}º`}</div>
                         <LogoTime
-                            time={time.nome}
+                            time={time.time}
                             height={32}
                             width={32}
                         />
-                        <div>{time.nome}</div>
+                        <div>{time.time}</div>
                     </div>
                     <div className="flex justify-between items-center w-7/12">
                         <div className="text-black flex justify-center w-6 font-bold">{time.p}</div>

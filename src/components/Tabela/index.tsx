@@ -1,8 +1,16 @@
 import Linha from "./Linha";
 import Legenda from "./Legenda";
 import { useEffect, useState } from "react";
+import TabelaService from "@/logic/core/tabela/TabelaService";
+import Time from "@/logic/core/tabela/Time";
 export default function Tabela() {
-    const [tabela, setTabela] = useState([])
+    const [tabela, setTabela] = useState(Array<Time>)
+
+    useEffect(() =>{
+        fetch('http://localhost:3000/api/tabela')
+        .then(resp => resp.json())
+        .then(tabela => setTabela(tabela))
+    }, [])
 
     return (
         <div className={`

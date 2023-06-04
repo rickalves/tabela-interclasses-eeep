@@ -1,6 +1,8 @@
-import mongoose from "mongoose";
+import { Schema } from "mongoose";
+import Tabela from "@/logic/core/tabela/Tabela";
+import DBConnect from "../config/DBConnect";
 
-const timeSchema = new mongoose.Schema(
+const timeSchema = new Schema(
     {
         time: { type: String, required: true },
         pn: { type: Number, required: true },
@@ -12,7 +14,7 @@ const timeSchema = new mongoose.Schema(
     }
 )
 
-const tabelaSchema = new mongoose.Schema(
+const tabelaSchema = new Schema<Tabela>(
     {
         temporada:{type: Number, required: true},
         times: [timeSchema],  
@@ -22,7 +24,9 @@ const tabelaSchema = new mongoose.Schema(
     }
 )
 
-const tabela = mongoose.models.tabela || mongoose.model("tabela", tabelaSchema) ;
+async function criaTabela(){
+    const conn = await DBConnect.conectar()
+    return conn.models?.Tabela || conn.model("Tabela", tabelaSchema)
+}
 
-
-export default tabela;
+export default criaTabela;
