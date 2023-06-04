@@ -1,17 +1,17 @@
-import partidas from "../model/Partidas.mjs"
+import partidas from "../model/Partidas"
 
-class PartidaController{
+export default class PartidaController{
 
-   static buscarPartidas = async () => {
+   static async buscarPartidas(){
         return await partidas.find().then(partidas => partidas);
     }
 
-    static buscarPartidasAno = async (ano) => {
+    static async buscarPartidasAno (ano:number){
         const query = partidas.find({ temporada:ano })
         return await query.exec()
     }
 
-    static cadastrarPartidas = () => {
+    static cadastrarPartidas(){
         let novaPartida = new partidas({
             temporada:2023,
             rodadas:[
@@ -33,5 +33,3 @@ class PartidaController{
         novaPartida.save()
     }
 }
-
-export default PartidaController;

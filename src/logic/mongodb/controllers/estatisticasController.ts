@@ -1,18 +1,18 @@
-import estatisticas from "../model/Estatisticas.mjs"
+import estatisticas from "../model/Estatisticas"
 
 
-class EstatisticasController{
+export default class EstatisticasController{
 
-   static buscarEstatisticas = async () => {
+   static async buscarEstatisticas() {
         return await estatisticas.find().then(estatisticas => estatisticas);
     }
 
-    static buscarEstatisticasAno = async (ano) => {
+    static async buscarEstatisticasAno (ano:number){
         const query = estatisticas.find({ temporada:ano })
         return await query.exec()
     }
 
-    static cadastrarEstatisticas = () => {
+    static cadastrarEstatisticas() {
         let novaEstatisticas = new estatisticas({
             temporada:2023,
             gols:[
@@ -57,5 +57,3 @@ class EstatisticasController{
         novaEstatisticas.save()
     }
 }
-
-export default EstatisticasController;
