@@ -1,5 +1,4 @@
-import partidas from "../model/Partidas.js"
-import partidasMock from "../mocks/partidas.js";
+import partidas from "../model/Partidas.mjs"
 
 class PartidaController{
 

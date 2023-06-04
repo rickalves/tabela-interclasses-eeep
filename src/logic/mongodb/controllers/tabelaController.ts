@@ -1,15 +1,16 @@
-import tabela from "../model/Tabela.mjs"
+import tabela from "../model/Tabela"
 
 
-class TabelaController{
+export default class TabelaController{
 
    static buscarTabela = async () => {
-        return await tabela.find().then(tabela => tabela);
+        const dados = await tabela.find().then(tabela => tabela);
+        return dados
     }
 
-    static buscarTabelaAno = async (ano) => {
-        const query = tabela.find({ temporada:ano })
-        return await query.exec()
+    static buscarTabelaAno = async (ano:Number) => {
+        const dados = await tabela.find({ temporada:ano })
+        return dados
     }
 
     static cadastrarTabela = () => {
@@ -40,5 +41,3 @@ class TabelaController{
         novaTabela.save()
     }
 }
-
-export default TabelaController;

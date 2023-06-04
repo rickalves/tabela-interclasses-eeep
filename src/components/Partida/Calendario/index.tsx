@@ -1,4 +1,4 @@
-import { dataDiaMes, diaSemana } from "../../../services/datas"
+import { Datas } from "../../../logic/utils/Datas.ts"
 interface Props {
     data: string;
     hora: string;
@@ -16,17 +16,17 @@ export default function Calendario({ data, hora, finalizado }: Props) {
                 `}>
                     <div className="font-normal">
                         {
-                            finalizado ? '' : `${diaSemana(data)} |`
+                            finalizado ? '' : `${Datas.diaSemana(data)} |`
                         }
                     </div>
                     {`
-                        ${finalizado ? 'FIM' : dataDiaMes(data)}
+                        ${finalizado ? 'FIM' : Datas.dataDiaMes(data)}
                     `}
                 </div>
                 <div className="flex justify-center gap-2">
                     <div>
                         {`
-                            ${finalizado ? `${diaSemana(data)} | ${dataDiaMes(data)}`: hora}
+                            ${finalizado ? `${Datas.diaSemana(data)} | ${Datas.dataDiaMes(data)}`: hora}
                         `}
                     </div>
                 </div>

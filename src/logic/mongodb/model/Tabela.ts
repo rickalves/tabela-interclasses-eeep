@@ -22,7 +22,7 @@ const tabelaSchema = new mongoose.Schema(
     }
 )
 
-const tabela = mongoose.model("tabela", tabelaSchema);
+const tabela = mongoose.models.tabela || mongoose.model("tabela", tabelaSchema) ;
 
 
 export default tabela;

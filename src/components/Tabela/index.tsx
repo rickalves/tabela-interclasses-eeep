@@ -1,9 +1,8 @@
 import Linha from "./Linha";
-import { carregaTabela } from "../../services/carregaDados"
 import Legenda from "./Legenda";
-
+import { useEffect, useState } from "react";
 export default function Tabela() {
-    const tabela = carregaTabela();
+    const [tabela, setTabela] = useState([])
 
     return (
         <div className={`

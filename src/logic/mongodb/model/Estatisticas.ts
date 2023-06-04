@@ -30,7 +30,7 @@ const estatisticasSchema = new mongoose.Schema(
     }
 )
 
-const estatisticas = mongoose.model("estatistica", estatisticasSchema);
+const estatisticas = mongoose.models.estatistica || mongoose.model("estatistica", estatisticasSchema);
 
 
 export default estatisticas;

@@ -1,23 +1,40 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     },
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/data/app.mjs", "src/data/config/dbConnect.mjs", "src/data/model/Estatisticas.mjs", "src/data/model/Partidas.mjs"],
-  "exclude": ["node_modules"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/logic/mongodb/app.ts",
+    "src/data/config/dbConnect.mjs",
+    "src/logic/mongodb/model/Tabela.ts",
+    "src/logic/mongodb/controllers/tabelaController.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
