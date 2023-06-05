@@ -17,7 +17,7 @@ interface LinhaProps {
 
 export default function Linha({ posicao, time }: LinhaProps) {
     return (
-        <div className=" flex flex-col justify-center h-12">
+        <div className=" flex flex-col justify-center h-12 md:hover:bg-gray-50 md:cursor-pointer">
         <div className={`
             flex flex-col justify-between text-xs md:text-base gap-2
         `}>

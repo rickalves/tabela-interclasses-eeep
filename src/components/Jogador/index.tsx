@@ -10,7 +10,7 @@ interface Props{
 }
 export default function Jogador({ posicao, nome, time, estatistica, foto }:Props){
     return(
-        <div className="flex flex-col justify-between h-14">
+        <div className="flex flex-col justify-between h-14 md:hover:bg-gray-50 md:cursor-pointer">
             <div className="flex justify-between items-center px-1">
                 <div className="flex items-center gap-2">
                     <div className="text-sm md:text-base">{posicao}º</div>
