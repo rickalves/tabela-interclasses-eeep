@@ -13,6 +13,13 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    animation: {
+      'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+      'ping': 'ping 2s cubic-bezier(0, 0, 0.2, 1) infinite',
+      'ping-fast': 'ping 4s cubic-bezier(0, 0, 0.2, 1) infinite',
+      'spin':'spin 1s linear infinite',
+      'bounce':'bounce 1s infinite,'
+    },
   },
   plugins: [],
 }

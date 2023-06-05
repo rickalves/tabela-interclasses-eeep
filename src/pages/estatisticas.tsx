@@ -6,24 +6,26 @@ import Card from '@/components/Card'
 import Jogador from '@/components/Jogador'
 import Rodape from '@/components/template/Rodape'
 import { useState, useEffect } from 'react'
+import Loading from '@/components/Loading'
 
-interface GolsType{
-  _id?:any;
-  nome:string;
-  time:string;
-  gols:number;
-  foto:string 
+interface GolsType {
+  _id?: any;
+  nome: string;
+  time: string;
+  gols: number;
+  foto: string
 }
 
-interface Cartoes{
-  _id?:any;
-  nome:string;
-  time:string;
-  cartoes:number;
-  foto:string 
+interface Cartoes {
+  _id?: any;
+  nome: string;
+  time: string;
+  cartoes: number;
+  foto: string
 }
 
 export default function Estatisticas() {
+  const [isLoading, setIsLoanding] = useState(true)
   const [gols, setGols] = useState(Array<GolsType>)
   const [cartoesAmarelos, setCartoesAmarelos] = useState(Array<Cartoes>)
   const [cartoesVermelhos, setCartoesVermelhos] = useState(Array<Cartoes>)
@@ -35,6 +37,7 @@ export default function Estatisticas() {
         setGols(estatisticas.gols)
         setCartoesAmarelos(estatisticas.cartoes_amarelos)
         setCartoesVermelhos(estatisticas.cartoes_vermelhos)
+        setIsLoanding(false)
       })
       .catch(err => console.log("erro ao carregar os dados", err))
   }, [])
@@ -54,39 +57,44 @@ export default function Estatisticas() {
           </MenuItem>
         </Menu>
       </Cabecalho>
-      <Card titulo='Gols'>
-        {gols.map((jogador, index) => 
-              <Jogador 
-                key={index}
-                nome={jogador.nome}
-                time={jogador.time}
-                posicao={index + 1}
-                estatistica={jogador.gols}
-                foto={jogador.foto || 'foto-icon.svg'}
-              />)}
-      </Card>
-      <Card titulo='Cartões Amarelos'>
-        {cartoesAmarelos.map((jogador, index) => 
-              <Jogador 
-                key={index}
-                nome={jogador.nome}
-                time={jogador.time}
-                posicao={index + 1}
-                estatistica={jogador.cartoes}
-                foto={jogador.foto || 'foto-icon.svg'}
-              />)}
-      </Card>
-      <Card titulo='Cartões Vermelhos'>
-        {cartoesVermelhos.map((jogador, index) => 
-              <Jogador 
-                key={index}
-                nome={jogador.nome}
-                time={jogador.time}
-                posicao={index + 1}
-                estatistica={jogador.cartoes}
-                foto={jogador.foto || 'foto-icon.svg'}
-              />)}
-      </Card>
+      {
+        isLoading ? <Loading /> :
+          <>
+            <Card titulo='Gols'>
+              {gols.map((jogador, index) =>
+                <Jogador
+                  key={index}
+                  nome={jogador.nome}
+                  time={jogador.time}
+                  posicao={index + 1}
+                  estatistica={jogador.gols}
+                  foto={jogador.foto || 'foto-icon.svg'}
+                />)}
+            </Card>
+            <Card titulo='Cartões Amarelos'>
+              {cartoesAmarelos.map((jogador, index) =>
+                <Jogador
+                  key={index}
+                  nome={jogador.nome}
+                  time={jogador.time}
+                  posicao={index + 1}
+                  estatistica={jogador.cartoes}
+                  foto={jogador.foto || 'foto-icon.svg'}
+                />)}
+            </Card>
+            <Card titulo='Cartões Vermelhos'>
+              {cartoesVermelhos.map((jogador, index) =>
+                <Jogador
+                  key={index}
+                  nome={jogador.nome}
+                  time={jogador.time}
+                  posicao={index + 1}
+                  estatistica={jogador.cartoes}
+                  foto={jogador.foto || 'foto-icon.svg'}
+                />)}
+            </Card>
+          </>
+      }
       <Rodape />
     </Pagina>
   )

@@ -6,6 +6,7 @@ import CardRodada from '@/components/CardRodada'
 import Partida from '@/components/Partida'
 import Rodape from '@/components/template/Rodape'
 import { useEffect, useState } from 'react'
+import Loading from '@/components/Loading'
 
 interface Partida{
   _id?:any;
@@ -22,15 +23,20 @@ interface Partida{
 
 
 export default function Partidas() {
+  const [isLoading, setIsLoanding] = useState(true)
   const [partidas, setPartidas] = useState({
       _id:"",
       temporada:0,
       rodadas:[[]]
   })
+
   useEffect(()=>{
     fetch('https://api-interclasses-app.vercel.app/api/partidas')
         .then(resp => resp.json())
-        .then(partidas => setPartidas(partidas))
+        .then(partidas => {
+          setPartidas(partidas)
+          setIsLoanding(false)
+        })
         .catch(err => console.log("erro ao carregar os dados", err))
   },[])
 
@@ -50,6 +56,7 @@ export default function Partidas() {
         </Menu>
       </Cabecalho>
       {
+        isLoading ? <Loading /> : 
         partidas.rodadas.map((rodada, index) =>
           <CardRodada rodada={index+1} totalRodadas={rodada.length} key={index}>
             {
