@@ -54,7 +54,7 @@ export default function Tabela() {
                                 <div className="flex justify-center w-6">D</div>
                                 <div className="flex justify-center w-6">GP</div>
                                 <div className="flex justify-center w-6">GC</div>
-                                <div className="flex justify-center w-6">GS</div>
+                                <div className="flex justify-center w-6">SG</div>
                             </div>
                         </div>
                         <hr className="border-1 border-gray-300 w-full" />
