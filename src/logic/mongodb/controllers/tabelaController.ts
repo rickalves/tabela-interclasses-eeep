@@ -1,5 +1,7 @@
 import Tabela from "@/logic/core/tabela/Tabela"
 import tabela from "../model/Tabela"
+import { IncomingHttpHeaders, OutgoingHttpHeader } from "http";
+import { HTTP_METHOD } from "next/dist/server/web/http";
 
 
 export default class TabelaController{
@@ -9,7 +11,7 @@ export default class TabelaController{
         const resultado = await tabelaBD.findOne({ temporada:ano })
         return resultado
     }
-
+    
     static async cadastrarTabela(){
         const tabelaBD = await tabela();
         let novaTabela = new tabelaBD({

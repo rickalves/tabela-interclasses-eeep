@@ -1,4 +1,7 @@
-// import TabelaService from "./tabela/TabelaService"
+import express from 'express';
+import routes from './routes/index';
 
-// TabelaService.carregaTabelaAno(2023).then(tabela => console.log(tabela))
+const app = express();
+routes(app);
 
+export default app;

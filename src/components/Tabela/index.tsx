@@ -3,13 +3,15 @@ import Legenda from "./Legenda";
 import { useEffect, useState } from "react";
 import TabelaService from "@/logic/core/tabela/TabelaService";
 import Time from "@/logic/core/tabela/Time";
+
 export default function Tabela() {
     const [tabela, setTabela] = useState(Array<Time>)
 
     useEffect(() =>{
-        fetch('http://localhost:3000/api/tabela')
+        fetch('http://127.0.0.1:5000/tabelas')
         .then(resp => resp.json())
         .then(tabela => setTabela(tabela))
+        .catch(err => console.log("erro ao carregar os dados", err))
     }, [])
 
     return (

@@ -12,7 +12,7 @@
     "allowImportingTsExtensions": true,
     "noEmit": true,
     "esModuleInterop": true,
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
@@ -33,7 +33,7 @@
     "src/data/config/dbConnect.mjs",
     "src/logic/mongodb/model/Tabela.ts",
     "src/logic/mongodb/controllers/tabelaController.ts"
-  ],
+, "src/logic/core/server.ts", "src/logic/core/app.ts"  ],
   "exclude": [
     "node_modules"
   ]
