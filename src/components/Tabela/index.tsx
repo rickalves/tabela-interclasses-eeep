@@ -1,14 +1,25 @@
 import Linha from "./Linha";
 import Legenda from "./Legenda";
 import { useEffect, useState } from "react";
-import TabelaService from "@/logic/core/tabela/TabelaService";
-import Time from "@/logic/core/tabela/Time";
+
+interface Time{
+    time: string;
+    p: number;
+    pn: number;
+    j: number;
+    v: number;
+    e: number;
+    d: number;
+    gp: number;
+    gc: number;
+    sg: number;
+}
 
 export default function Tabela() {
     const [tabela, setTabela] = useState(Array<Time>)
 
     useEffect(() =>{
-        fetch('http://127.0.0.1:5000/tabelas')
+        fetch('https://api-interclasses-app.vercel.app/api/tabela')
         .then(resp => resp.json())
         .then(tabela => setTabela(tabela))
         .catch(err => console.log("erro ao carregar os dados", err))
