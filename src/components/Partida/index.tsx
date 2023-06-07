@@ -8,23 +8,34 @@ interface Props{
     placarB:number;
     data:string;
     hora:string;
-    finalizado:boolean
-    vencedor?:string
-    colspan?: boolean
+    finalizado:boolean;
+    vencedor?:string;
+    colspan?: boolean;
+    indefinido?: boolean;
 }
 
-export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor, colspan }:Props){
+export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor, colspan, indefinido }:Props){
     return(
         <div className={`
-            flex w-full bg-white p-4 rounded-md shadow-md mt-4
+            flex w-full bg-white p-4 rounded-md shadow-md mt-1
             justify-center overflow-hidden ${colspan? 'md:col-span-2' : ''}
             md:hover:bg-gray-50 md:cursor-pointer
         `}>
-            <div className="flex justify-between text-sm  text-gray-500 ">
-                <div className="flex flex-col gap-4">
-                    <Placar time={timeA} placar={placarA} vencedor={vencedor === 'A'}/>
-                    <Placar time={timeB} placar={placarB} vencedor={vencedor === 'B'}/>    
-                </div>
+            <div className="flex justify-between text-sm  text-gray-500">
+                {
+                    
+                    indefinido ? 
+                    <div className="flex flex-col items-center gap-2">
+                        <div>{timeA}</div> 
+                        <div>x</div> 
+                        <div>{timeB}</div> 
+                    </div>
+                    :
+                    <div className="flex flex-col gap-4">
+                        <Placar time={timeA} placar={placarA} vencedor={vencedor === 'A'}/>
+                        <Placar time={timeB} placar={placarB} vencedor={vencedor === 'B'}/>    
+                    </div>
+                }
                 <Calendario data={data} hora={hora} finalizado={finalizado}/>
             </div>
         </div>
