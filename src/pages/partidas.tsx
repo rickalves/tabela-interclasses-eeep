@@ -23,22 +23,22 @@ interface Partida{
 
 
 export default function Partidas() {
-  const [isLoading, setIsLoanding] = useState(true)
+  const [isLoading, setIsLoanding] = useState(false)
   const [partidas, setPartidas] = useState({
       _id:"",
       temporada:0,
       rodadas:[[]]
   })
 
-  useEffect(()=>{
-    fetch('https://api-interclasses-app.vercel.app/api/partidas')
-        .then(resp => resp.json())
-        .then(partidas => {
-          setPartidas(partidas)
-          setIsLoanding(false)
-        })
-        .catch(err => console.log("erro ao carregar os dados", err))
-  },[])
+  // useEffect(()=>{
+  //   fetch('https://api-interclasses-app.vercel.app/api/partidas')
+  //       .then(resp => resp.json())
+  //       .then(partidas => {
+  //         setPartidas(partidas)
+  //         setIsLoanding(false)
+  //       })
+  //       .catch(err => console.log("erro ao carregar os dados", err))
+  // },[])
 
   return (
     <Pagina>
@@ -56,7 +56,8 @@ export default function Partidas() {
         </Menu>
       </Cabecalho>
       {
-        isLoading ? <Loading /> : 
+        isLoading ? <Loading /> : (
+          partidas.rodadas.length > 2 ?  
         partidas.rodadas.map((rodada, index) =>
           <CardRodada rodada={index+1} totalRodadas={rodada.length} key={index}>
             {
@@ -75,8 +76,11 @@ export default function Partidas() {
                   />
                 )
             }
-          </CardRodada>
+          </CardRodada>) 
+          :
+          <div>Está página está sendo atualizada...</div>
         )
+        
       }
       <Rodape />
     </Pagina>
