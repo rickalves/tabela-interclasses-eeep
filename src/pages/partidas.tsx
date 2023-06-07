@@ -121,13 +121,13 @@ export default function Partidas() {
   })
 
   useEffect(() => {
-    // fetch('https://api-interclasses-app.vercel.app/api/partidas')
-    //     .then(resp => resp.json())
-    //     .then(partidas => {
-    //       setPartidas(partidas)
-    //       setIsLoanding(false)
-    //     })
-    //     .catch(err => console.log("erro ao carregar os dados", err))
+    fetch('https://api-interclasses-app.vercel.app/api/partidas')
+        .then(resp => resp.json())
+        .then(partidas => {
+          setPartidas(partidas)
+          setIsLoanding(false)
+        })
+        .catch(err => console.log("erro ao carregar os dados", err))
   }, [])
 
   return (
