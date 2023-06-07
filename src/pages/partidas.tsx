@@ -22,101 +22,17 @@ interface Partida {
 }
 
 
-
 export default function Partidas() {
-  const [isLoading, setIsLoanding] = useState(false)
+  const [isLoading, setIsLoanding] = useState(true)
   const [partidas, setPartidas] = useState({
     _id: "",
     temporada: 0,
     rodadas: {
       grupos: [[]],
-      finais: [
-        {
-          fase: "Quartas de final",
-          jogos: [
-            {
-              "timeA": "2º EDIF",
-              "timeB": "1º AGRO",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "",
-            },
-            {
-              "timeA": "2º EDIF",
-              "timeB": "1º AGRO",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "",
-            },
-            {
-              "timeA": "2º EDIF",
-              "timeB": "1º AGRO",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "",
-            },
-            {
-              "timeA": "2º EDIF",
-              "timeB": "1º AGRO",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "",
-            }
-          ]
-        },
-        {
-          fase: "Semifinal",
-          jogos: [
-            {
-              "timeA": "Vencedor jogo 1",
-              "timeB": "Vencedor jogo 2",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "indefinido",
-            },
-            {
-              "timeA": "Vencedor jogo 3",
-              "timeB": "Vencedor jogo 4",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "indefinido",
-            }
-          ]
-        },
-        {
-          fase: "Final",
-          jogos: [
-            {
-              "timeA": "Vencedor semifinal 1",
-              "timeB": "Vencedor semifinal 2",
-              "placarA": 0,
-              "placarB": 0,
-              "data": "08/08/2023",
-              "hora": "12:15",
-              "finalizado": false,
-              "vencedor": "indefinido",
-            }
-          ]
-        }
-      ]
+      finais: [{
+        fase:"",
+        jogos:[]
+      }]
     }
   })
 
