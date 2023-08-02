@@ -17,7 +17,7 @@ interface Props{
 export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor, colspan, indefinido }:Props){
     return(
         <div className={`
-            flex w-full bg-white p-4 rounded-md shadow-md mt-1
+            flex w-full ${!finalizado? `bg-gray-200` : `bg-white`} p-4 rounded-md shadow-md mt-1
             justify-center overflow-hidden ${colspan? 'md:col-span-2' : ''}
             md:hover:bg-gray-50 md:cursor-pointer
         `}>
