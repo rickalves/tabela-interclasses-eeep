@@ -17,8 +17,8 @@ interface Partida {
   placarB: number;
   data: string;
   hora: string;
-  finalizado: boolean
-  vencedor: string
+  finalizado: boolean;
+  vencedor: string;
 }
 
 
@@ -78,6 +78,7 @@ export default function Partidas() {
                     vencedor={partida.vencedor}
                     colspan={true}
                     indefinido={partida.vencedor === 'indefinido'}
+                    final={rodada.fase == 'Final'}
                   />
                 </CardRodadasFinais>
               )

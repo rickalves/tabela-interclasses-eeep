@@ -12,9 +12,10 @@ interface Props{
     vencedor?:string;
     colspan?: boolean;
     indefinido?: boolean;
+    final?: boolean;
 }
 
-export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor, colspan, indefinido }:Props){
+export default function Partida({ timeA, timeB, placarA, placarB, data, hora, finalizado, vencedor, colspan, indefinido, final }:Props){
     return(
         <div className={`
             flex w-full ${!finalizado? `bg-gray-200` : `bg-white`} p-4 rounded-md shadow-md mt-1
@@ -32,8 +33,8 @@ export default function Partida({ timeA, timeB, placarA, placarB, data, hora, fi
                     </div>
                     :
                     <div className="flex flex-col gap-4">
-                        <Placar time={timeA} placar={placarA} vencedor={vencedor === 'A'}/>
-                        <Placar time={timeB} placar={placarB} vencedor={vencedor === 'B'}/>    
+                        <Placar time={timeA} placar={placarA} vencedor={vencedor === 'A'} final={final}/>
+                        <Placar time={timeB} placar={placarB} vencedor={vencedor === 'B'} final={final}/>    
                     </div>
                 }
                 <Calendario data={data} hora={hora} finalizado={finalizado}/>

@@ -5,12 +5,15 @@ interface Props {
     time: string;
     placar: number;
     vencedor: boolean;
-    campeao?: boolean
+    final?: boolean
 }
 
-export default function Placar({ time, placar, vencedor, campeao}: Props) {
+export default function Placar({ time, placar, vencedor, final}: Props) {
     return (
-        <div className="flex justify-between text-sm  text-gray-700 w-40 items-center">
+        <div className={`
+            flex 
+            ${final? `justify-start gap-4` : `justify-between `}
+            text-sm  text-gray-700 w-40 items-center`}>
             <div className="flex gap-2 items-center">
                 <LogoTime
                     time={time}
@@ -30,7 +33,7 @@ export default function Placar({ time, placar, vencedor, campeao}: Props) {
                         {placar}
                 </div>
                 <div>
-                    {campeao? <Image
+                    {vencedor && final? <Image
                         src={iconTrophy}
                         height={25}
                         width={25}
