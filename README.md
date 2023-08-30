@@ -6,7 +6,7 @@ Site para acompanhamento dos resultados dos jogos de futsal entre as turmas de u
 | -------------  | --- |
 | :sparkles: Nome        | **Interclasses APP**
 | :label: Tecnologias | React, Nextjs, Mongo
-| :rocket: URL         |
+| :rocket: URL         | https://tabela-interclasses-eeep.vercel.app/
 
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
